@@ -1,0 +1,118 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-family:verdana;
+	font-size:13px;
+    margin: 0px;
+    background-image:url('../images/bg_body.gif');
+    background-repeat: repeat;
+}
+
+.page{
+	width:100%;
+	margin:0px auto;
+}
+
+/*--------------------------------
+start header
+----------------------------------*/
+.header{
+    height: 120px;
+    background-image:url('../images/bg_header.gif');
+}
+
+
+
+/*--------------------------------
+end header
+----------------------------------*/
+
+/*--------------------------------
+start menu
+----------------------------------*/
+
+.menu{
+    margin:0;
+    padding:0;
+    background:url(../images/nav_bg1.png);
+    height:41px;
+    position:relative;
+}
+
+/*--------------------------------
+end menu
+----------------------------------*/
+
+
+
+/*--------------------------------
+start content
+----------------------------------*/
+
+.content{
+    width:100%;
+    height:auto;    
+    margin-bottom:25px;
+}
+
+.main{
+    margin:0px auto;
+    padding:10px;
+}
+
+.main .top h1, .heading {
+	padding: 8px 0px 8px 7px;
+}
+.main h1, .heading {
+	color: #000000;
+	font-size: 13px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 0px 0px 10px 0px;
+	padding:5px;
+	background:#DFDFDF;
+	border-top:1px solid #dfdfdf;
+	border-left:1px solid #dfdfdf;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+}
+
+
+.main_dashboard{
+	margin: 0px auto;
+	width: 98%;
+	position:relative;
+	height:auto;
+}
+
+/*--------------------------------
+end content
+----------------------------------*/
+
+
+/*--------------------------------
+start footer
+----------------------------------*/
+
+.footer{
+    clear:both;
+    height:35px;
+    font-size:11px;
+    background-image: url("../images/bg_footer.gif");
+    position: fixed;
+	z-index: 5;
+	margin-top:5px;
+	bottom: 0px;
+	width:100%;
+	
+}
+.footer .subfooter{
+    padding-top: 9px;
+    padding-left: 5px;
+}
+
+
+/*--------------------------------
+end footer
+----------------------------------*/

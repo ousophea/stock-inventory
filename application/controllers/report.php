@@ -89,7 +89,7 @@ class Report extends Base_Controller {
 		
 		$this->pagination->initialize($config);
 		$data['links']=$this->pagination->create_links();
-		
+		$data['statistic']=$this->obj->statistic_report($category,$status,$startDate,$endDate);
 		$data['listReport'] = $this->obj->search_report($category,$status,$startDate,$endDate,$pageNumber,$this->uri->segment(3));
 		$this->load->view('report/report_message',$data);
 	}

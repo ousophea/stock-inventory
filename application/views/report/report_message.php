@@ -5,7 +5,17 @@
 	
 		<h1>Reprot</h1>	
 		<div class="tab_add_new">
-			<div style="margin:-3px 0;">
+			<div style="text-align:left; float:left;">
+				<?php
+					$incr = 0;
+					foreach($statistic as $key=>$value):
+						if($incr>0) echo " | ";
+						echo "<span>$key ($value)</span>";						
+						$incr++;
+					endforeach;		
+				?>
+			</div>
+			<div style="margin:-3px 0; float:right">				
 				<form name="frmsearch" action="" method="post">				
 					<input type="hidden" class="text" name="tmpdate" id="tmpdate" />
 					<?php
@@ -46,7 +56,8 @@
 					</a>
 										
 				</form>
-			</div>			
+			</div>
+			<div class="clear"></div>
 		</div>
 		<div class="clear"></div>	
 		<table class="tbl">

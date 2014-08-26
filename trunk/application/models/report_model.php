@@ -6,6 +6,42 @@ class Report_Model extends MY_Model {
     	parent::__construct();    	
 	}
 	
+	function statistic_report($cat,$status,$startdate,$enddate){		
+		$result = array();
+		$dataStatus = $this->get_all_data('tbl_status','status_id','ASC');
+		foreach($dataStatus as $item){
+			$result[$item['status']] = 0;
+		}
+		
+		$this->db->select('status,count(*) as qty');
+		$this->db->where('active',1);
+		
+		if($cat!=0){
+			$this->db->where('cat_id',$cat);
+		}		
+		if($status != 0){
+			$this->db->where('status_id',$status);
+		}		
+		if($startdate != "" && $enddate != ""){
+			$where = "date_created BETWEEN '".$startdate."' AND '".$enddate."'";
+			$this->db->where($where);
+		}
+		$this->db->group_by('status_id');		
+		$query=$this->db->get('view_stock');	 
+		
+		$data = array();
+		if($query->num_rows>0){
+			foreach($query->result_array() as $row){
+				$data[]=$row;
+			}
+		}
+		$query->free_result();
+		foreach($data as $item){
+			$result[$item['status']] = $item['qty'];
+		}		
+		return $result;
+	}
+	
 	function search_report_num($cat,$status,$startdate,$enddate){
 		$result=array();
 		$this->db->where('active',1);
